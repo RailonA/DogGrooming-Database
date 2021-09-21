@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :users, only: [:show, :create]
       resources :appointments, only: [:index, :create]
       resources :services, only: [:index]
-      post '/login', to: "authentication#login"
+      post 'login', to: 'services#create'
 
     end
   end

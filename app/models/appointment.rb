@@ -1,4 +1,7 @@
 class Appointment < ApplicationRecord
-  belongs_to :user, class_name: 'User'
-  belongs_to :service, class_name: 'Service'
+  belongs_to :user
+  belongs_to :service
+
+  validates :date, presence: true
+  validates :service, presence: true
 end

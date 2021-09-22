@@ -1,25 +1,19 @@
 class Api::V1::AppointmentsController < ApplicationController
-  skip_before_action :authorized
+  before_action :authenticate, only: [:create]
 
   def index
-    @user = User.find_by(username: params[:username])
-    appointments = @user.appointments
-    render json: { appointments: appointments }, status: 200
+    @appointments = Appointment.all
+    render json: @appointments
   end
 
   def create
-    @user = User.find_by(username: params[:appointment][:username])
-    set_appointment = @user.appointments.create!(appointment_params)
-    if set_appointment
-      render json: { appointment: set_appointment }, status: 201
-    else
-      render json: { errors: stack.errors }, status: 401
-    end
+    @appointment = Appointments.create!(appointment_params)
+    render json: @appointment
   end
 
   private
 
   def appointment_params
-    params.require(:appointment).permit(:facility_id, :date, :city)
+    params.permit(:service_id, :user_id, :date)
   end
 end

@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2021_09_21_172114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  res
   create_table "appointments", force: :cascade do |t|
     t.datetime "date"
     t.bigint "user_id", null: false
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(version: 2021_09_21_172114) do
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
-  trips
   create_table "services", force: :cascade do |t|
     t.string "category"
     t.string "petService"

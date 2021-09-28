@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.1'
 gem 'jwt'
 gem 'simple_command'
+gem 'active_model_serializers', '~> 0.10.12'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'

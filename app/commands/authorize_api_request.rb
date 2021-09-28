@@ -23,11 +23,13 @@ class AuthorizeApiRequest
   end
 
   def http_auth_header
+    # rubocop:disable Style/GuardClause:
     if headers['Authorization'].present?
       return headers['Authorization'].split(' ').last
     else
       errors.add(:token, 'Missing token')
     end
+    # rubocop:enable Style/GuardClause:
     nil
   end
 end

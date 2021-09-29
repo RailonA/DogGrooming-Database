@@ -1,14 +1,14 @@
-# Trips Reservation API
+# Pet Grooming API
 
-> A Rails API end-point application for reservation of trips.
+> A Rails API end-point application for reservation of services.
 
 ## API Methods
 ### 1. GET /api/v1/services/
-  * lists trips info
+  * lists service info
   * required params: none
 
 ### 2. POST /api/v1/appointments
-  * creates reservation
+  * creates appointment
   * required params: (i)user_id, (ii)service_id, (iii)date
   * requires Authorization provided in header (details in 5th method)
 
@@ -40,7 +40,7 @@
 
 ## Live Server
 
-[Link to live server](https://azamats-trips-api.herokuapp.com)
+[Link to live server](https://petgroomingservicedatabase.herokuapp.com/)
 
 ## ERD diagram
 

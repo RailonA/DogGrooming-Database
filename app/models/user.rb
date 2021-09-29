@@ -1,17 +1,17 @@
 class User < ApplicationRecord
-    has_secure_password
+  has_secure_password
 
-    has_many :appointments
-    has_many :services, through: :appointments
-  
-    validates :username,
+  has_many :appointments
+  has_many :services, through: :appointments
+
+  validates :username,
             presence: true,
             uniqueness: true,
             length: { minimum: 4, maximum: 20 },
             format: { with: /\A[a-zA-Z0-9]+\Z/ }
 
-    password_format = /\A(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/x
-        
+  password_format = /\A(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/x
+
   # rubocop:disable Layout/LineLength
   validates :password,
             presence: true,

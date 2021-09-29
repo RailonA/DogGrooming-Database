@@ -30,6 +30,7 @@ class AuthorizeApiRequest
       errors.add(:token, 'Missing token')
     end
     # rubocop:enable Style/GuardClause:
+
     nil
   end
 end

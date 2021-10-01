@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'administrate'
-gem 'bourbon'
 ruby '3.0.1'
 gem 'active_model_serializers', '~> 0.10.12'
 gem 'jwt'

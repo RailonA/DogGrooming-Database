@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'administrate'
+gem 'bourbon'
 ruby '3.0.1'
 gem 'active_model_serializers', '~> 0.10.12'
 gem 'jwt'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'simple_command'
-
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

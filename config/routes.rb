@@ -6,11 +6,21 @@ Rails.application.routes.draw do
   appointments
     ).each do |name|
       resources name, only: %i(index show new create edit update destroy)
+      resources :roles, only:  %i(index, show)
     end
-      resources :roles, only: [:index, :show]
+    #  root to: "user#index"
+    # http://localhost:3000/admin/login
+    # get    '/login',   to: 'sessions#new'
 
-      root to: "user#index"
+    # post   '/login',   to: 'sessions#create'
+    # delete '/logout',  to: 'sessions#destroy'
+  
     end
+    # http://localhost:3000/admin/
+    get    '/admin',   to: 'admin/sessions#new'
+    # get    '/admin',   to: 'admin/sessions#new'
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do

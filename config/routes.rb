@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     ).each do |name|
       resources name, only: %i(index show new create edit update destroy)
     end
+      resources :roles, only: [:index, :show]
 
       root to: "user#index"
     end

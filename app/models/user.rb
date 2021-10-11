@@ -1,5 +1,9 @@
 class User < ApplicationRecord
+  rolify
   has_secure_password
+
+  after_initialize :set_default_role, if: :new_record?
+
 
   has_many :appointments
   has_many :services, through: :appointments
@@ -19,4 +23,11 @@ class User < ApplicationRecord
                       message: '(i)Must contain 8 or more characters, (ii)Must contain a digit, (iii)Must contain a lower case character, (iv)Must contain an upper case character' },
             on: :create
   # rubocop:enable Layout/LineLength
+
+  validates :roles, presence: true
+
+  def set_default_role
+    self.add_role(:normal)
+  end
+
 end

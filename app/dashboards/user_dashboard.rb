@@ -13,7 +13,8 @@ class UserDashboard < Administrate::BaseDashboard
     services: Field::HasMany,
     id: Field::Number,
     username: Field::String,
-    password_digest: Field::String,
+    password: Field::String,
+    password_confirmation: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -38,7 +39,6 @@ class UserDashboard < Administrate::BaseDashboard
     services
     id
     username
-    password_digest
     created_at
     updated_at
   ].freeze
@@ -48,10 +48,9 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     roles
-    appointments
-    services
     username
-    password_digest
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

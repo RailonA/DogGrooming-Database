@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_165125) do
+ActiveRecord::Schema.define(version: 2021_09_21_172114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,25 +26,19 @@ ActiveRecord::Schema.define(version: 2021_10_01_165125) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "category"
-    t.string "petService"
-    t.string "serviceDescription"
-    t.string "servicePrice"
+    t.string "category", null: false
+    t.string "petService", null: false
+    t.string "serviceDescription", null: false
+    t.string "servicePrice", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "username", null: false
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "email"
-    t.string "encrypted_password", limit: 128
-    t.string "confirmation_token", limit: 128
-    t.string "remember_token", limit: 128
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   add_foreign_key "appointments", "services"

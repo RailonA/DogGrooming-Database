@@ -6,7 +6,7 @@ module Admin
       user = User.find_by(username: params[:session][:username].downcase)
       if user&.authenticate(params[:session][:password])
         # Log the user in and redirect to the user's show page.
-       log_in user
+        log_in user
         redirect_to admin_users_path
       else
         # Create an error message.

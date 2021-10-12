@@ -4,7 +4,6 @@ class User < ApplicationRecord
 
   after_initialize :set_default_role, if: :new_record?
 
-
   has_many :appointments
   has_many :services, through: :appointments
 
@@ -27,7 +26,6 @@ class User < ApplicationRecord
   validates :roles, presence: true
 
   def set_default_role
-    self.add_role(:normal)
+    add_role(:normal)
   end
-
 end

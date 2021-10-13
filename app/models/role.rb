@@ -12,6 +12,6 @@ class Role < ApplicationRecord
   scopify
 
   validates :name,
-        inclusion: { in: %w['admin', 'normal'] },
-        uniqueness: true
+            inclusion: { in: %w[admin normal] },
+            uniqueness: 'true'
 end

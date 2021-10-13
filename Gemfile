@@ -5,8 +5,8 @@ ruby '3.0.1'
 gem 'active_model_serializers', '~> 0.10.12'
 gem 'administrate'
 gem 'jwt'
-gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rolify'
+gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'simple_command'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible

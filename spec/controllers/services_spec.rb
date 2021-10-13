@@ -6,8 +6,7 @@ describe 'Check if service are received', type: :request do
       petService: 'Title',
       category: 'dog',
       serviceDescription: 'description',
-      servicePrice: 'cost',
-     
+      servicePrice: 'cost'
     )
     get '/api/v1/services'
     data = JSON.parse(response.body)

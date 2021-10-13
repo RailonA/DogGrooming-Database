@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 describe 'create', type: :request do
   before do
     post '/api/v1/users', params: {
@@ -8,12 +7,8 @@ describe 'create', type: :request do
       password_confirmation: 'Abcd1234'
     }
   end
-
   it 'return info of created user' do
     data = JSON.parse(response.body)
     expect(data['username']).to eq('railon')
   end
 end
-
-
-

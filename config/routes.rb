@@ -8,8 +8,6 @@ Rails.application.routes.draw do
       resources name, only: %i(index show new create edit update destroy)
       resources :roles, only:  %i(index, show)
     end
-    #  root to: "user#index"
-    # http://localhost:3000/admin/login
     
     get    'login',   to: 'sessions#new'    
     post   'login',   to: 'sessions#create'
@@ -17,12 +15,6 @@ Rails.application.routes.draw do
 
     root to: 'sessions#new'
     end
-    
-    # http://localhost:3000/admin/
-    # get    '/admin',   to: 'admin/sessions#new'
-
-    # post   '/admin',   to: 'admin/sessions#create'
-    # delete '/logout',  to: 'admin/sessions#destroy'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do

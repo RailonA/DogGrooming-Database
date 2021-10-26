@@ -9,6 +9,6 @@ class Api::V1::AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.permit(:user_id, :service_id, :date)
+    params.permit(:user_id, :service_id, :date, :time)
   end
 end

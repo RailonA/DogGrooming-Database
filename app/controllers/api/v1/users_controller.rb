@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
                                  include: { service: {
                                    only: %i[id category petService serviceDescription servicePrice]
                                  } },
-                                 only: %i[id date service_id user_id created_at]
+                                 only: %i[id date time service_id user_id created_at]
                                } })
   end
 

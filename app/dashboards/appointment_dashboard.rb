@@ -11,7 +11,8 @@ class AppointmentDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     service: Field::BelongsTo,
     id: Field::Number,
-    date: Field::DateTime,
+    date: Field::Date,
+    time: Field::Time,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -26,6 +27,7 @@ class AppointmentDashboard < Administrate::BaseDashboard
     service
     id
     date
+    time
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,6 +37,7 @@ class AppointmentDashboard < Administrate::BaseDashboard
     service
     id
     date
+    time
     created_at
     updated_at
   ].freeze
@@ -46,6 +49,7 @@ class AppointmentDashboard < Administrate::BaseDashboard
     user
     service
     date
+    time
   ].freeze
 
   # COLLECTION_FILTERS

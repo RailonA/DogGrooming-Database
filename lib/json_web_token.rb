@@ -1,4 +1,4 @@
-***** LIVE SERVER *******
+# ***** LIVE SERVER *******
 
 class JsonWebToken
   class << self
@@ -21,7 +21,7 @@ class JsonWebToken
   end
 end
 
-# # ***** LOCAL SERVER *******
+# ***** LOCAL SERVER *******
 
 # class JsonWebToken
 #   class << self
